@@ -1,0 +1,45 @@
+<ng-container *ngIf="sobres.length != 0">
+  <ion-item-divider>
+    <ion-label>
+      Sobres sin pagar
+    </ion-label>
+  </ion-item-divider>
+
+  <ng-container *ngIf="contarSobresSinPagar(); else elseTemplate">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+      <ng-container *ngFor="let sobre of sobres">
+        <div class="col" *ngIf="!sobre.pagado">
+          <app-carta-sobre [mensaje]="'Pagar'" [icono]="'cash-outline'" [sobre]="sobre" [funcion]="pagado">
+          </app-carta-sobre>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <ion-item>
+      No existen sobres sin pagar.
+    </ion-item>
+  </ng-template>
+
+
+  <ion-item-divider>
+    <ion-label>
+      Sobres pagados
+    </ion-label>
+  </ion-item-divider>
+  <ng-container *ngIf="contarSobresPagados(); else elseTemplatePagados">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+      <ng-container *ngFor="let sobre of sobres">
+        <div class="col" *ngIf="sobre.pagado">
+          <app-carta-sobre [mensaje]="'Reembolsar'" [icono]="'wallet-outline'" [sobre]="sobre" [funcion]="sinPagar">
+          </app-carta-sobre>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplatePagados>
+    <ion-item>
+      No has pagado ningún sobre.
+    </ion-item>
+  </ng-template>
+</ng-container>
