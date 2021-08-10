@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/app.store';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { updateSobre, getSobres } from '../../../store/actions/app.actions';
+import { updateSobre } from '../../../store/actions/app.actions';
 
 @Component({
   selector: 'app-listado-sobres',
@@ -29,7 +29,6 @@ export class ListadoSobresComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(getSobres());
   }
 
   pagado(sobre: Sobre) {

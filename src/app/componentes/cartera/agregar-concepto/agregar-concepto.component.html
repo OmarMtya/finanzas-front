@@ -1,0 +1,14 @@
+<form [formGroup]="form" (submit)="enviar()">
+  <ion-card>
+    <ion-card-content>
+      <ion-input placeholder="Nombre de concepto" formControlName="concepto"></ion-input>
+      <ion-input placeholder="Descripción" formControlName="descripcion"></ion-input>
+      <ion-input placeholder="Valor" formControlName="valor"></ion-input>
+      <ion-select placeholder="Seleccionar uno" formControlName="tipo">
+        <ion-select-option value="cartera.concepto">Activo</ion-select-option>
+        <ion-select-option value="cartera.credito">Crédito</ion-select-option>
+      </ion-select>
+      <ion-button type="submit" expand="block">Añadir concepto</ion-button>
+    </ion-card-content>
+  </ion-card>
+</form>

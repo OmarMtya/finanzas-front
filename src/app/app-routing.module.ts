@@ -21,10 +21,16 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: '/auth/login',
   },
+  { path: 'cartera', loadChildren: () => import('./componentes/cartera/cartera.module').then(m => m.CarteraPageModule) },
   {
     path: '**',
     redirectTo: '/',
+  },
+  {
+    path: 'cartera',
+    loadChildren: () => import('./componentes/cartera/cartera.module').then( m => m.CarteraPageModule)
   }
+
 ];
 @NgModule({
   imports: [
