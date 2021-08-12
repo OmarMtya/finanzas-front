@@ -112,7 +112,7 @@ export class AuthEffects {
         localStorage.removeItem('token');
         localStorage.removeItem('usuario');
         localStorage.removeItem('error');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth', 'login']);
       })
     );
   }, { dispatch: false });

@@ -120,7 +120,7 @@ export class AuthService {
     const token = localStorage.getItem('token');
     const usuario = localStorage.getItem('usuario');
     if (token && usuario) {
-      this.router.navigate(['/admin']);
+      // this.router.navigate(['/tabs', 'tab1']);
       return false;
     }
     return true;

@@ -29,7 +29,11 @@ const routes: Routes = [
   {
     path: 'cartera',
     loadChildren: () => import('./componentes/cartera/cartera.module').then( m => m.CarteraPageModule)
+  },  {
+    path: 'resumen',
+    loadChildren: () => import('./componentes/resumen/resumen.module').then( m => m.ResumenPageModule)
   }
+
 
 ];
 @NgModule({

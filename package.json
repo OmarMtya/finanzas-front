@@ -25,6 +25,7 @@
     "@ngrx/effects": "^12.3.0",
     "@ngrx/store": "^12.3.0",
     "@ngrx/store-devtools": "^12.3.0",
+    "chart.js": "^3.5.0",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.1.2",
     "tslib": "^2.2.0",
